@@ -34,10 +34,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       role: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Roles",
+          key: "id"
+        }
       },
       speciality: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Specialities",
+          key: "id"
+        }
       },
       createdAt: {
         allowNull: false,
