@@ -8,13 +8,20 @@ app.use(express.json());
 
 app.use(router);
 
+app.get('/auth', (req, res) => {
+    return res.json({
+        success: true,
+        messagge: "Bienvenido auth"
+    });
+});
+
 db.then(
-    ()=>{
+    () => {
         app.listen(PORT, () => {
             console.log(`Servidor levantado correctamente y a la escucha en el puerto ${PORT}`);
         });
     }
 )
-.catch(
-    error => console.error(`Ha habido un error conectándose a la base de datos`, error)
-)
+    .catch(
+        error => console.error(`Ha habido un error conectándose a la base de datos`, error)
+    )
