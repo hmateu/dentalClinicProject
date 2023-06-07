@@ -33,7 +33,7 @@ module.exports = {
       collegial: {
         type: Sequelize.INTEGER
       },
-      rol: {
+      role: {
         type: Sequelize.INTEGER
       },
       speciality: {

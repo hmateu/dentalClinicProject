@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     location: DataTypes.STRING,
     collegial: DataTypes.INTEGER,
-    rol: DataTypes.INTEGER,
+    role: DataTypes.INTEGER,
     speciality: DataTypes.INTEGER
   }, {
     sequelize,
