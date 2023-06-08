@@ -13,7 +13,7 @@ authLoginController.login = async (req, res) => {
              return res.json(
                  {
                      success: true,
-                     message: "Credenciales incorrectas"
+                     message: "No dejes campos vacíos"
                  }
              )
          } 
