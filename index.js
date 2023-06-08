@@ -9,8 +9,6 @@ app.use(express.json());
 
 app.use(router);
 
-app.post('/auth/register', authRegisterController.register);
-
 db.then(
     () => {
         app.listen(PORT, () => {
