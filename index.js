@@ -2,18 +2,14 @@ const express = require("express");
 const app = express();
 const PORT = 5000;
 const router = require('./router');
+const authRegisterController = require("./controllers/authRegisterController");
 const db = require('./db');
 
 app.use(express.json());
 
 app.use(router);
 
-app.get('/auth', (req, res) => {
-    return res.json({
-        success: true,
-        messagge: "Bienvenido auth"
-    });
-});
+app.post('/auth/register', authRegisterController.register);
 
 db.then(
     () => {
