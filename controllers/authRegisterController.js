@@ -5,13 +5,16 @@ const authRegisterController = {};
 authRegisterController.register = async (req,res) => {
     try {
 
-        const { dni, name, surname, password, age, mobile, email, location, collegial, role, speciality } = req.body;
+        const { dni, name, surname, password, age, mobile, email, location } = req.body;
 
         const newUser = await User.create(
             {
                 dni: dni,
                 name: name,
-                surname, password, age, mobile, email, location, collegial, role, speciality
+                surname, password, age, mobile, email, location,
+                collegial: null,
+                speciality: null,
+                role: 4
             }
         );
         return res.send(newUser);
