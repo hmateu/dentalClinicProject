@@ -13,7 +13,7 @@ appointmentCreateController.createAppointment = async (req, res) => {
                 message: "Cita creada",
                 data: newAppointment
             }
-        );
+        )
     } catch (error) {
         return res.status(500).json(
             {
