@@ -3,9 +3,12 @@ const appointmentCreateController = {};
 
 appointmentCreateController.createAppointment = async (req, res) => {
     try {
-        const { date, price, assessment, dentist, patient, service, payment } = req.body;
+        const patient = req.userId;
+        const { date, price, assessment, dentist, service, payment } = req.body;
         const newAppointment = Appointment.create({
-            date, price, assessment, dentist, patient, service, payment
+            date, price, assessment, dentist,
+            patient: patient,
+            service, payment
         });
         return res.json(
             {
