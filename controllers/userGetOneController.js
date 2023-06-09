@@ -3,8 +3,8 @@ const userGetOneController = {}
 
 userGetOneController.getOneUser =  async(req, res) => {
     try {
-        const userId = req.params.id;
-
+        // const userId = req.params.id;
+        const userId = req.userId;
         const user = await User.findByPk(userId);
 
         return res.json({

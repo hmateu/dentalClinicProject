@@ -7,7 +7,8 @@ const userUpdateController = require('../controllers/userUpdateController');
 const isAdmin = require('../middlewares/isAdmin');
 
 router.get('/', auth, userGetAllController.getAllUsers);
-router.get('/:id', auth, userGetOneController.getOneUser);
+// router.get('/:id', auth, userGetOneController.getOneUser);
+router.get('/perfil', auth, userGetOneController.getOneUser);
 router.put('/:id', auth, userUpdateController.updateUser);
 router.delete('/:id', auth, isAdmin, userDeleteController.deleteUser);
 
