@@ -10,7 +10,7 @@ const auth = require('../middlewares/verifyToken');
 const router = require('express').Router();
 
 router.get('/', auth, isDentist, appointmentGetAllController.getAllAppointments);
-router.get('/patient', appointmentGetOnePatientController.getOnePatientAppointments);
+router.get('/patient', auth, appointmentGetOnePatientController.getOnePatientAppointments);
 router.get('/dentist', appointmentGetOneDentistController.getOneDentistAppointments);
 router.post('/', appointmentCreateController.createAppointment);
 router.put('/:id', appointmentUpdateController.updateAppointment);
