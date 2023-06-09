@@ -10,16 +10,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       date: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       price: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
+        allowNull: false,
       },
       assessment: {
         type: Sequelize.STRING
       },
       dentist: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "Users",
           key: "id"
@@ -27,6 +30,7 @@ module.exports = {
       },
       patient: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "Users",
           key: "id"
@@ -34,6 +38,7 @@ module.exports = {
       },
       service: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "Services",
           key: "id"
@@ -41,6 +46,7 @@ module.exports = {
       },
       payment: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "Payments",
           key: "id"
