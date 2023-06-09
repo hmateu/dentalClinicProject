@@ -5,11 +5,12 @@ const appointmentGetOneController = require('../controllers/appointmentGetOneCon
 const appointmentGetOneDentistController = require('../controllers/appointmentGetOneDentistController');
 const appointmentGetOnePatientController = require('../controllers/appointmentGetOnePatientController');
 const appointmentUpdateController = require('../controllers/appointmentUpdateController');
+const isDentist = require('../middlewares/isDentist');
+const auth = require('../middlewares/verifyToken');
 
 const router = require('express').Router();
 
 router.get('/', appointmentGetAllController.getAllAppointments);
-router.get('/:id', appointmentGetOneController.getOneAppointment);
 router.get('/patient', appointmentGetOnePatientController.getOnePatientAppointments);
 router.get('/dentist', appointmentGetOneDentistController.getOneDentistAppointments);
 router.post('/', appointmentCreateController.createAppointment);
