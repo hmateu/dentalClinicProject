@@ -16,7 +16,6 @@ userUpdateController.updateUser = async (req, res) => {
             );
         };
 
-        const { title, description } = req.body;
         const { dni, name, surname, password, age, mobile, email, location, collegial, role, speciality } = req.body;
 
         const userUpdated = await User.update(
