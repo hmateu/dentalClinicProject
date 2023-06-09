@@ -10,7 +10,7 @@ const isDentist = require('../middlewares/isDentist');
 router.get('/', auth, isDentist, userGetAllController.getAllUsers);
 // router.get('/:id', auth, userGetOneController.getOneUser);
 router.get('/perfil', auth, userGetOneController.getOneUser);
-router.put('/:id', auth, userUpdateController.updateUser);
+router.put('/', auth, userUpdateController.updateUser);
 router.delete('/:id', auth, isAdmin, userDeleteController.deleteUser);
 
 module.exports = router;
