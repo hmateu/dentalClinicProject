@@ -15,6 +15,6 @@ router.get('/patient', auth, appointmentGetOnePatientController.getOnePatientApp
 router.get('/dentist', auth, isDentist, appointmentGetOneDentistController.getOneDentistAppointments);
 router.post('/', auth, appointmentCreateController.createAppointment);
 router.put('/:id', auth, appointmentUpdateController.updateAppointment);
-router.delete('/:id', appointmentDeleteController.deleteAppointment);
+router.delete('/:id', auth, appointmentDeleteController.deleteAppointment);
 
 module.exports = router;

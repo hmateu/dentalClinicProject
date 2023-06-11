@@ -5,6 +5,21 @@ const appointmentDeleteController = {};
 appointmentDeleteController.deleteAppointment = async (req,res) => {
     try {
         const appointmentId = req.params.id;
+        const appointment = await Appointment.findByPk(appointmentId);
+
+        // console.log("---------------",req.userId,"---------------")
+        // console.log("--------Patient Appointment-------",appointment.patient,"---------------")
+
+        const patientId = req.userId;
+        const appointmentPatient = appointment.patient;
+        if(patientId != appointmentPatient){
+            return res.json(
+                {
+                    success: true,
+                    message: "No tienes permisos para modificar esta consulta."
+                }
+            );
+        }
 
         const deleteAppointment = await Appointment.destroy({
             where: {
