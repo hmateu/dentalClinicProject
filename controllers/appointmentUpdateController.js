@@ -16,11 +16,28 @@ appointmentUpdateController.updateAppointment = async (req, res) => {
             );
         };
 
-        const { date, price, assessment, dentist, patient, service, payment } = req.body;
+        
+        // console.log("---------------",req.userId,"---------------")
+        // console.log("--------Patient Appointment-------",appointment.patient,"---------------")
+
+        const patientId = req.userId;
+        const appointmentPatient = appointment.patient;
+
+        if(patientId != appointmentPatient){
+            return res.json(
+                {
+                    success: true,
+                    message: "No tienes permisos para modificar esta consulta."
+                }
+            );
+        }
+        
+        // const { date, price, assessment, dentist, patient, service, payment } = req.body;
+        const { date, dentist, service, payment } = req.body;
 
         const appointmentUpdated = await Appointment.update(
             {
-                date, price, assessment, dentist, patient, service, payment
+                date, dentist, service, payment
             },
             {
                 where: {
