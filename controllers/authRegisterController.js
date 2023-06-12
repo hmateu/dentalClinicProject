@@ -8,6 +8,18 @@ authRegisterController.register = async (req,res) => {
 
         const { dni, name, surname, password, age, mobile, email, location } = req.body;
 
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const isValidEmail = emailRegex.test(email);
+
+        if(!isValidEmail){
+            return res.json(
+                {
+                    success: true,
+                    message: "Email no válido"
+                }
+            )
+        }
+
         const newPassword = bcrypt.hashSync(password,8);
 
         const newUser = await User.create(
@@ -20,7 +32,12 @@ authRegisterController.register = async (req,res) => {
                 role: 4
             }
         );
-        return res.send(newUser);
+        return res.json(
+            {
+                success: true,
+                message: "Usuario registrado correctamente"
+            }
+        )
     } catch (error) {
         return res.status(500).json(
             {
