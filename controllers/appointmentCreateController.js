@@ -1,15 +1,29 @@
-const { Appointment } = require("../models");
+const { Appointment, User } = require("../models");
 const appointmentCreateController = {};
 
 appointmentCreateController.createAppointment = async (req, res) => {
     try {
         const patient = req.userId;
         const { date, price, assessment, dentist, service, payment } = req.body;
-        const newAppointment = Appointment.create({
+
+        const rolcurrentDentist = await User.findOne({
+            where: {
+                id: dentist,
+                role: 2
+            }
+        });
+
+        if (!rolcurrentDentist) {
+            res.statusCode = 400;
+            throw new Error("No es un dentista válido");
+        }
+
+        const newAppointment = await Appointment.create({
             date, price, assessment, dentist,
             patient: patient,
             service, payment
         });
+
         return res.json(
             {
                 success: true,
@@ -18,7 +32,9 @@ appointmentCreateController.createAppointment = async (req, res) => {
             }
         )
     } catch (error) {
-        return res.status(500).json(
+        let statusCode;
+        res.statusCode === 200 ? statusCode = 500 : statusCode = res.statusCode;
+        return res.status(statusCode).json(
             {
                 success: false,
                 message: "No se puede crear la cita",
