@@ -1,10 +1,16 @@
-const { Appointment, User } = require("../models");
+const { Appointment, User, Service } = require("../models");
 const appointmentCreateController = {};
 
 appointmentCreateController.createAppointment = async (req, res) => {
     try {
         const patient = req.userId;
-        const { date, price, assessment, dentist, service, payment } = req.body;
+        const { date, assessment, dentist, service, payment } = req.body;
+
+        const currentService = await Service.findOne({
+            where: {
+                id: service
+            }
+        });
 
         const rolcurrentDentist = await User.findOne({
             where: {
@@ -19,7 +25,9 @@ appointmentCreateController.createAppointment = async (req, res) => {
         }
 
         const newAppointment = await Appointment.create({
-            date, price, assessment, dentist,
+            date,
+            price: currentService.price,
+            assessment, dentist,
             patient: patient,
             service, payment
         });
