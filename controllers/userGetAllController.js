@@ -3,7 +3,11 @@ const userGetAllController = {}
 
 userGetAllController.getAllUsers =  async(req, res) => {
     try {
-        const users = await User.findAll();
+        const users = await User.findAll({
+            attributes: {
+                exclude: ['password']
+            }
+        });
 
         return res.json({
             success: true,
