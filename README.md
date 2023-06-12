@@ -9,6 +9,8 @@
     <li><a href="#instalación-en-local">Instalación en local</a></li>
     <li><a href="#endpoints">Endpoints</a></li>
     <li><a href="#contribuciones">Contribuciones</a></li>
+    <li><a href="#agradecimientos">Agradecimientos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
     <li><a href="#licencia">Licencia</a></li>
   </ol>
 </details>
@@ -132,5 +134,16 @@ Puedes hacerlo de dos maneras:
         ```
     - Abre una solicitud de Pull Request
 
+## Agradecimientos
+Agradezco a mis profesores el tiempo dedicado a este proyecto:
+
+- **Dani**  
+<a href="https://github.com/Datata" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=lime" target="_blank"></a> 
+
+- **David**
+<a href="https://github.com/Dave86dev" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
+
+## Contacto
+<a href = "mailto:hmateu.ortola@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a> <a href="https://www.linkedin.com/in/h%C3%A9ctor-mateu-ortol%C3%A1-278b92160/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 ## Licencia
 Este proyecto se ha realizado bajo la **licencia MIT**.
