@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "199e7a50-9392-444f-9224-31e07b9d4a0a",
+		"name": "dentalClinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27515925"
+	},
+	"item": [
+		{
+			"name": "Registro de usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": \"35471123Z\",\r\n    \"name\": \"Nuevo\",\r\n    \"surname\": \"Para Probar\",\r\n    \"password\": \"1234\",\r\n    \"age\": 60,\r\n    \"mobile\": 631475202,\r\n    \"email\": \"nuevo@gmail.com\",\r\n    \"location\": \"C/ Prueba registro usuario\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login de usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"edu@gmail.com\",\r\n    \"password\":\"e1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Perfil de usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInJvbGVJZCI6NCwiZW1haWwiOiJuYXN0aWFAZ21haWwuY29tIiwiaWF0IjoxNjg2NTAxNjgwLCJleHAiOjE2ODY1MTI0ODB9.79FLCfS6U6jaRXJr4_aWSg_FfLudaFtITempdkapzFc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/users/perfil",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"perfil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificación de datos del perfil",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGVJZCI6MSwiZW1haWwiOiJsdWNpYUBnbWFpbC5jb20iLCJpYXQiOjE2ODYzMTQ5MjgsImV4cCI6MTY4NjMyNTcyOH0.TdfUczbSNccYcr1nytw-0s1N7obBajLKkVzPNoC4zks",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": \"20478963Z\",\r\n    \"name\": \"Marta\",\r\n    \"surname\": \"Barajas Marlllllllllltínez\",\r\n    \"password\": \"655987\",\r\n    \"age\": 39,\r\n    \"mobile\": 614780013,\r\n    \"email\": \"marta@gmail.com\",\r\n    \"location\": \"C/En algún lugar\",\r\n    \"collegial\":462832110,\r\n    \"role\": 2,\r\n    \"speciality\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creación de citas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInJvbGVJZCI6NCwiZW1haWwiOiJhbmRyZWFAZ21haWwuY29tIiwiaWF0IjoxNjg2NTk1OTg2LCJleHAiOjE2ODY2MDY3ODZ9.GQuvLPoKHjfAzNcKqxmyWm-6PereXM5sF2LCcfnV6w8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2023-05-02 00:00:00\",\r\n    \"assessment\": \"Consulta para hector\",\r\n    \"dentist\": 4,\r\n    \"service\": 7,\r\n    \"payment\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/appointments",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificación de citas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJyb2xlSWQiOjQsImVtYWlsIjoiZWR1QGdtYWlsLmNvbSIsImlhdCI6MTY4NjUwMDM5NiwiZXhwIjoxNjg2NTExMTk2fQ.Mx4T_FLXI5Y2-XOpF7xXYNac5p4GF8yCJCC1qUneZ5w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dentist\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/appointments/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Anulación de citas",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/appointments/6",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todas las citas existentes (como dentista)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/appointments",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todos los clientes registrados (como dentista)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver mis citas como paciente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJyb2xlSWQiOjQsImVtYWlsIjoiZWR1QGdtYWlsLmNvbSIsImlhdCI6MTY4NjUwNjU5NywiZXhwIjoxNjg2NTE3Mzk3fQ.T_g7kxB22S2ch3pEFNQLQrUuNeYLHebrp9tzByqiioM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/appointments/patient",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver una cita en detalle (Extra)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/appointments/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver mis citas como dentista",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/appointments/dentist",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments",
+						"dentist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Elimina el usuario por parámetro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/users/8",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Citas que ha realizado el dentista con más citas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJyb2xlSWQiOjQsImVtYWlsIjoiZWR1QGdtYWlsLmNvbSIsImlhdCI6MTY4NjYwNDM5MCwiZXhwIjoxNjg2NjE1MTkwfQ.D8-vi_UB2hE1TGfyOZ3Q_OaRwsqzESTGOeXwed0TnuE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/appointments/best-dentist",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments",
+						"best-dentist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Citas que ha realizado el paciente con más citas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/appointments/best-patient",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"appointments",
+						"best-patient"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
