@@ -30,10 +30,13 @@ Esta API ha sido desarrollada por **Héctor Mateu**, como cuarto proyecto del **
 ## Instalación en local
 1. Clonar el repositorio
 2. ` $ npm install `
-3. Conectamos nuestro repositorio con la base de datos 
-4. ``` $ Ejecutamos las migraciones ``` 
-5. ``` $ Ejecutamos los seeders ``` 
-6. ``` $ npm run dev ```
+3. Conectamos nuestro repositorio con la base de datos
+4. Ejecutamos las migraciones
+` $ sequelize db:migrate `
+5. Ejecutamos los seeders
+` $ sequelize db:seed:all `
+6. Levantamos el servidor de express
+` $ npm run dev `
 
 ## Endpoints
 <details>
