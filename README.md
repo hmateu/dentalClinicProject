@@ -140,7 +140,7 @@ Agradezco a mis profesores el tiempo dedicado a este proyecto:
 - **Dani**  
 <a href="https://github.com/Datata" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=lime" target="_blank"></a> 
 
-- **David**
+- **David**  
 <a href="https://github.com/Dave86dev" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
 
 ## Contacto
