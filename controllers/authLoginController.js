@@ -1,4 +1,5 @@
 const { User } = require('../models');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const authLoginController = {};
 
@@ -24,7 +25,17 @@ authLoginController.login = async (req, res) => {
         }
 
         //Validamos password
-        const userPassword = password;
+        // const userPassword = password;
+        const isMatch = bcrypt.compareSync(password, user.password);
+        
+        if(!isMatch){
+            return res.json(
+                {
+                    success: true,
+                    message: "Credenciales incorrectas"
+                }
+            );
+        }
 
         // if (!password || !email) {
         //     return res.json(
@@ -46,6 +57,13 @@ authLoginController.login = async (req, res) => {
                 expiresIn: '3h'
             }
         );
+        return res.json(
+            {
+                success: true,
+                message: "User Logged",
+                token: token
+            }
+        );
 
         if (user.password == password) {
             return res.json(
@@ -56,12 +74,12 @@ authLoginController.login = async (req, res) => {
                 }
             );
         }
-        return res.json(
-            {
-                success: true,
-                message: "Contraseña incorrecta"
-            }
-        );
+        // return res.json(
+        //     {
+        //         success: true,
+        //         message: "Contraseña incorrecta"
+        //     }
+        // );
 
     } catch (error) {
         return res.status(500).json(
