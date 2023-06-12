@@ -8,13 +8,8 @@
     <li><a href="#tecnologías-utilizadas">Stack - Tecnologías utilizadas</a></li>
     <li><a href="#instalación-en-local">Instalación en local</a></li>
     <li><a href="#endpoints">Endpoints</a></li>
-    <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li>
     <li><a href="#contribuciones">Contribuciones</a></li>
     <li><a href="#licencia">Licencia</a></li>
-    <li><a href="#webgrafia">Webgrafia</a></li>
-    <li><a href="#desarrollo">Desarrollo</a></li>
-    <li><a href="#agradecimientos">Agradecimientos</a></li>
-    <li><a href="#contacto">Contacto</a></li>
   </ol>
 </details>
 
@@ -22,7 +17,7 @@
 Este proyecto requería una API funcional conectada a una base de datos con al menos una relación de uno a muchos y una relación de muchos a muchos.
 
 ## Sobre el proyecto
-Esta API ha sido desarrollada por Hétor Mateu, como cuarto proyecto del Bootcamp de Full Stack Developer de Geekshubs Academy.
+Esta API ha sido desarrollada por **Héctor Mateu**, como cuarto proyecto del **Bootcamp de Full Stack Developer de Geekshubs Academy**, el cuál se basa en el diseño del backend de una aplicación. El cuál es totalmente funcional y se le puede atacar mediante POSTMAN.
 
 ## Diagrama ER
 ![image](./img/ERDiagram.JPG)
@@ -115,6 +110,27 @@ Esta API ha sido desarrollada por Hétor Mateu, como cuarto proyecto del Bootcam
 
             DELETE http://localhost:5000/appointments/2
 </details>
+
+## Contribuciones
+Las sugerencias y aportaciones son siempre bienvenidas.  
+
+Puedes hacerlo de dos maneras:
+
+1. Abriendo una issue
+2. Crea un fork del repositorio
+    - Crea una nueva rama  
+        ```
+        $ git checkout -b feature/nombreUsuario-mejora
+        ```
+    - Haz un commit con tus cambios 
+        ```
+        $ git commit -m 'feat: mejora X cosa'
+        ```
+    - Haz push a la rama 
+        ```
+        $ git push origin feature/nombreUsuario-mejora
+        ```
+    - Abre una solicitud de Pull Request
 
 ## Licencia
 Este proyecto se ha realizado bajo la **licencia MIT**.
