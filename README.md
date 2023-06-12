@@ -39,6 +39,7 @@ Esta API ha sido desarrollada por **Héctor Mateu**, como cuarto proyecto del **
 ` $ npm run dev `
 
 ## Endpoints
+Para poder atacar a la base de datos, tienes a tu disposición un archivo JSON con las solicitudes creadas en Postman. El archivo está en el directorio raíz con el nombre **dentalClinic.postman_collection.json**.
 <details>
 <summary>Endpoints</summary>
 
