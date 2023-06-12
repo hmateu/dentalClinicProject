@@ -42,8 +42,8 @@ Esta API ha sido desarrollada por Hétor Mateu, como cuarto proyecto del Bootcam
 <details>
 <summary>Endpoints</summary>
 
-- auth
-    - /register
+- **auth**
+    - **/register**
 
             POST http://localhost:5000/auth/register
         body:
@@ -59,7 +59,7 @@ Esta API ha sido desarrollada por Hétor Mateu, como cuarto proyecto del Bootcam
                 "location": "C/ Pintor Perales"
             }
         ```
-    - /login
+    - **/login**
 
             POST http://localhost:5000/auth/login  
         body:
@@ -69,23 +69,51 @@ Esta API ha sido desarrollada por Hétor Mateu, como cuarto proyecto del Bootcam
                 "password":"1234"
             }
         ```
-- usuarios
-    - /users : Recuperar todos los usuarios (debes estar logueado como dentista o admin)  
+- **usuarios**
+    - **/users** : Recuperar todos los usuarios (debes estar logueado como dentista o admin)  
 
             GET http://localhost:5000/users
 
-    - /users/perfil : Recuperar toda la información del usuario logueado  
+    - **/users/perfil** : Recupera toda la información del usuario logueado  
 
             GET http://localhost:5000/users/perfil
 
-    - /users : Modificar los datos del usuario logueado
+    - **/users** : Modificar los datos del usuario logueado
 
             PUT http://localhost:5000/users
 
-    - /users/:id : Elimina el usuario con el id que le pases por parámetro (debes estar logueado como admin)
+    - **/users/:id** : Elimina el usuario con el id que le pases por parámetro (debes estar logueado como admin)
 
             DELETE http://localhost:5000/users/2
 
+- **citas**
+    - **/appointments** : Recupera toda las citas (debes estar logueado como dentista o admin)  
+
+            GET http://localhost:5000/appointments
+
+    - **/appointments/patient** : Recupera todas las citas del usuario logueado  
+
+            GET http://localhost:5000/appointments/patient
+
+    - **/appointments/dentist** : Recupera todas las citas del usuario, donde este haya sido dentista  
+
+            GET http://localhost:5000/appointments/dentist
+
+    - **/appointments/:id** : Recupera la cita con el id que le pases por argumento, siempre que seas paciente de dicha cita
+
+            GET http://localhost:5000/appointments/2
+
+    - **/appointments** : Crea una cita para el paciente logueado
+
+            POST http://localhost:5000/appointments
+
+    - **/appointments/:id** : Modifica la cita con el id que le pases por argumento, siempre qeu seas paciente de dicha cita
+
+            PUT http://localhost:5000/appointments/2
+
+    - **/appointments/:id** : Borra la cita con el id que le pases por argumento (debes estar logueado como admin)
+
+            DELETE http://localhost:5000/appointments/2
 </details>
 
 ## Licencia
