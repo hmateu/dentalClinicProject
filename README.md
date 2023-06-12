@@ -96,6 +96,14 @@ Esta API ha sido desarrollada por **Héctor Mateu**, como cuarto proyecto del **
 
             GET http://localhost:5000/appointments/dentist
 
+    - **/appointments/best-dentist** : Recupera todas las citas del dentista que más intervenciones ha realizado  
+
+            GET http://localhost:5000/appointments/best-dentist
+
+    - **/appointments/best-patient** : Recupera todas las citas del paciente al que se le han realizado más intervenciones  
+
+            GET http://localhost:5000/appointments/best-patient
+
     - **/appointments/:id** : Recupera la cita con el id que le pases por argumento, siempre que seas paciente de dicha cita
 
             GET http://localhost:5000/appointments/2
