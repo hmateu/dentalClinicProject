@@ -4,9 +4,9 @@
   <ol>
     <li><a href="#objetivo">Objetivo</a></li>
     <li><a href="#sobre-el-proyecto">Sobre el proyecto</a></li>
-    <li><a href="#diagrama-ER">Diagrama Entidad Relación</a></li>
+    <li><a href="#diagrama-er">Diagrama Entidad Relación</a></li>
     <li><a href="#tecnologías-utilizadas">Stack - Tecnologías utilizadas</a></li>
-    <li><a href="#instalación-en-local">Instalación</a></li>
+    <li><a href="#instalación-en-local">Instalación en local</a></li>
     <li><a href="#endpoints">Endpoints</a></li>
     <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li>
     <li><a href="#contribuciones">Contribuciones</a></li>
@@ -24,7 +24,7 @@ Este proyecto requería una API funcional conectada a una base de datos con al m
 ## Sobre el proyecto
 Esta API ha sido desarrollada por Hétor Mateu, como cuarto proyecto del Bootcamp de Full Stack Developer de Geekshubs Academy.
 
-## Diagrama Entidad Relación
+## Diagrama ER
 ![image](./img/ERDiagram.JPG)
 
 ## Tecnologías utilizadas
@@ -37,3 +37,56 @@ Esta API ha sido desarrollada por Hétor Mateu, como cuarto proyecto del Bootcam
 4. ``` $ Ejecutamos las migraciones ``` 
 5. ``` $ Ejecutamos los seeders ``` 
 6. ``` $ npm run dev ```
+
+## Endpoints
+<details>
+<summary>Endpoints</summary>
+
+- auth
+    - /register
+
+            POST http://localhost:5000/auth/register
+        body:
+        ``` js
+            {
+                "dni": "35471123Z",
+                "name": "Héctor",
+                "surname": "Mateu Ortolá",
+                "password": "1234",
+                "age": 28,
+                "mobile": 630174559,
+                "email": "hector@gmail.com",
+                "location": "C/ Pintor Perales"
+            }
+        ```
+    - /login
+
+            POST http://localhost:5000/auth/login  
+        body:
+        ``` js
+            {
+                "email":"hector@gmail.com",
+                "password":"1234"
+            }
+        ```
+- usuarios
+    - /users : Recuperar todos los usuarios (debes estar logueado como dentista o admin)  
+
+            GET http://localhost:5000/users
+
+    - /users/perfil : Recuperar toda la información del usuario logueado  
+
+            GET http://localhost:5000/users/perfil
+
+    - /users : Modificar los datos del usuario logueado
+
+            PUT http://localhost:5000/users
+
+    - /users/:id : Elimina el usuario con el id que le pases por parámetro (debes estar logueado como admin)
+
+            DELETE http://localhost:5000/users/2
+
+</details>
+
+## Licencia
+Este proyecto se ha realizado bajo la **licencia MIT**.
